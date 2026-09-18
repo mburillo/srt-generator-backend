@@ -32,6 +32,7 @@ public class SubtitleResultUseCaseImpl implements ProcessSubtitleResultUseCase {
         switch (status) {
             case COMPLETED -> job.markCompleted(command.srtObjectKey(), command.detectedLanguage());
             case FAILED -> job.markFailed(command.error());
+            case PROCESSING -> job.markProcessing();
             default -> throw new IllegalArgumentException(
                     "Estado de resultado inesperado para el job %s: %s".formatted(command.jobId(), status));
         }

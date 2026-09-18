@@ -61,6 +61,10 @@ public class Job {
         this.completedAt = Instant.now();
     }
 
+    public void markProcessing() {
+        this.status = JobStatus.PROCESSING;
+    }
+
     public String getJobId() { return jobId; }
     public String getObjectKey() { return objectKey; }
     public String getTargetLanguage() { return targetLanguage; }

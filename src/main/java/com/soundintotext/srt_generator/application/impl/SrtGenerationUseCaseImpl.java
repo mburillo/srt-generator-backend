@@ -55,9 +55,9 @@ public class SrtGenerationUseCaseImpl implements SrtGenerationUseCase {
         SrtGenerationRequest request = new SrtGenerationRequest(
                 jobId, objectKey, null, targetLanguage, Instant.now()
         );
-        producer.sendGenerationRequest(request);
         Job job = Job.createPending(jobId,objectKey,targetLanguage);
         jobRepository.save(job);
+        producer.sendGenerationRequest(request);
         return job;
     }
 }
