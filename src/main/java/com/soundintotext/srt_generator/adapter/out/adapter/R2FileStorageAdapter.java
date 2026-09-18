@@ -42,7 +42,6 @@ public class R2FileStorageAdapter implements FileStoragePort {
     @Override
     public String store(String jobId, String originalFilename, InputStream content, long size, String contentType) {
         String objectKey = "uploads/%s/source%s".formatted(jobId, extractExtension(originalFilename));
-
         s3Client.putObject(
                 PutObjectRequest.builder()
                         .bucket(bucket)
