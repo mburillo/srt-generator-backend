@@ -44,5 +44,11 @@ spring:
       max-file-size: 2GB
       max-request-size: 2GB
 storage:
+  provider: ${STORAGE_PROVIDER:local}
   local:
-    base-path: ${STORAGE_BASE_PATH:/home/tu_usuario/subtitles-storage}
+    base-path: ${STORAGE_BASE_PATH:/home/magan/subtitles-storage}
+  r2:
+    endpoint: ${R2_ENDPOINT:}
+    access-key: ${R2_ACCESS_KEY:}
+    secret-key: ${R2_SECRET_KEY:}
+    bucket: ${R2_BUCKET:}

@@ -3,6 +3,7 @@ package com.soundintotext.srt_generator.adapter.out.adapter;
 import com.soundintotext.srt_generator.adapter.out.port.FileStoragePort;
 import com.soundintotext.srt_generator.domain.exception.FileStorageException;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 @Component
+@ConditionalOnProperty(prefix = "storage", name = "provider", havingValue = "local", matchIfMissing = true)
 public class LocalFileStorageAdapter implements FileStoragePort {
 
     private final Path basePath;
