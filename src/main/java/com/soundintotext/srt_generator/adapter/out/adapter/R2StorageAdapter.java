@@ -2,6 +2,7 @@ package com.soundintotext.srt_generator.adapter.out.adapter;
 
 import com.soundintotext.srt_generator.adapter.out.port.R2StoragePort;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
@@ -17,6 +18,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class R2StorageAdapter implements R2StoragePort {
 
 
