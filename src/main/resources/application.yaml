@@ -36,9 +36,9 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: "com.soundintotext.srt_generator.adapter.in.messaging"
+        spring.json.trusted.packages: "com.soundintotext.srt_generator.domain.model"
         spring.json.use.type.headers: false
-        spring.json.value.default.type: com.soundintotext.srt_generator.adapter.in.messaging.SubtitleResultEvent
+        spring.json.value.default.type: com.soundintotext.srt_generator.domain.model.SubtitleResultEvent
 
 storage:
   local:
